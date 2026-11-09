@@ -528,3 +528,26 @@ def clicked(x, y):
 
 screen.onscreenclick(clicked)
 screen.mainloop()
+
+clicks = 0
+click_power = 1
+upgrade_level = 0
+
+def upgrade_cost():
+    return 10 * (2 ** upgrade_level)
+
+def click():
+    global clicks
+    clicks += click_power
+
+def buy_upgrade():
+    global clicks, click_power, upgrade_level
+
+    cost = upgrade_cost()
+    if clicks >= cost:
+        clicks -= cost
+        upgrade_level += 3
+        click_power *= 3
+        print(f"Upgrade bought! Each click now earns {click_power}.")
+    else:
+        print(f"You need {cost} clicks for the upgrade.")
