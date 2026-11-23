@@ -6,9 +6,8 @@ import turtle
 from pathlib import Path
 
 
-# -----------------------------
-# Configuration
-# -----------------------------
+# here you go 
+
 WIDTH, HEIGHT = 960, 600
 SAVE_FILE = Path(__name__).resolve().with_name("clicker_save.json")
 
